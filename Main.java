@@ -7,6 +7,7 @@ public class Main
         int operadores = 0;
         int parenteses = 0;
         int seguido = 0;
+        int op_invalido = 0;
         for(int i = 0;i<veri.length;i++)
         {
             if(veri[i] == '+' || veri[i] == '-' || veri[i] == '*' || veri[i] == '/' || veri[i] == '^')
@@ -25,6 +26,15 @@ public class Main
             {
                 seguido++;
             }
+            else if(veri[veri.length-1] == '+' || veri[veri.length-1] == '-' || veri[veri.length-1] == '*' || veri[veri.length-1] == '/' || veri[veri.length-1] == '^')
+            {
+                seguido++;
+            }
+            else if(veri[i] == '%')
+            {
+                operadores++;
+                op_invalido++;
+            }
         }
 
         if(operadores == 0){
@@ -35,6 +45,9 @@ public class Main
         }
         else if(seguido > 0){
             return new String[]{"Erro: Expressao invalida","false"};
+        }
+        else if(op_invalido > 0){
+            return new String[]{"Erro: Operador invalido","false"};
         }
         return new String[]{"","true"};
     }
