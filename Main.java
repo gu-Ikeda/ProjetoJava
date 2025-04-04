@@ -1,3 +1,6 @@
+//Gustavo Kiyoshi Ikeda RA:10439179
+//Jiye Huang RA:10438990
+//Gabriel Mires Camargo RA:10436741
 import java.util.Scanner;
 
 public class Main
